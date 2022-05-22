@@ -27,22 +27,6 @@ services:
         networks:
             - cepa
         tty: true
-    react:
-    # React not reloading when changes are applied on windows
-    # See: https://github.com/microsoft/WSL/issues/6255
-        build:
-            context: .
-            dockerfile: dockerfiles/DockerfileReact
-        ports:
-            - 3000:3000
-        restart: unless-stopped
-        networks:
-            - cepa
-        volumes:
-            - ./frontend:/app
-            - ./app/node_modules
-        stdin_open: true
-        tty: true
 
 networks:
     cepa:

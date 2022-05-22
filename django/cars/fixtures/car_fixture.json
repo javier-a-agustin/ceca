@@ -1,6 +1,6 @@
 [
 	{
-		"model": "api.car",
+		"model": "cars.car",
 		"pk": 1,
 		"fields": {
 			"name": "Ford Focus",
@@ -8,7 +8,7 @@
 		}
 	},
 	{
-		"model": "api.car",
+		"model": "cars.car",
 		"pk": 2,
 		"fields": {
 			"name": "Chevrolet Corsa",
@@ -16,7 +16,7 @@
 		}
 	},
 	{
-		"model": "api.car",
+		"model": "cars.car",
 		"pk": 3,
 		"fields": {
 			"name": "Ford Ecosport",
@@ -24,7 +24,7 @@
 		}
 	},
 	{
-		"model": "api.car",
+		"model": "cars.car",
 		"pk": 4,
 		"fields": {
 			"name": "Ford Fiesta",
@@ -32,7 +32,7 @@
 		}
 	},
 	{
-		"model": "api.car",
+		"model": "cars.car",
 		"pk": 5,
 		"fields": {
 			"name": "Ford Ka",
