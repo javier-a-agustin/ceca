@@ -20,4 +20,11 @@ See the django\api\management\commands\write_car_rows.py file.
 
 # up.sh command  
 By using the ./up.sh shell command within the root directory the containers will start, and migrations and initial data will be added.  
-This command won't work until the mysql database is created.
+This command won't work until the mysql database is created.  
+
+# List of car plates from car_fixture.json  
+- 123abc  
+- 123def  
+- 123ghi  
+- 456abc  
+- 456def
