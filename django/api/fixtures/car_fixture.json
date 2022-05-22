@@ -1,0 +1,42 @@
+[
+	{
+		"model": "api.car",
+		"pk": 1,
+		"fields": {
+			"name": "Ford Focus",
+			"plate": "123abc"
+		}
+	},
+	{
+		"model": "api.car",
+		"pk": 2,
+		"fields": {
+			"name": "Chevrolet Corsa",
+			"plate": "123def"
+		}
+	},
+	{
+		"model": "api.car",
+		"pk": 3,
+		"fields": {
+			"name": "Ford Ecosport",
+			"plate": "123ghi"
+		}
+	},
+	{
+		"model": "api.car",
+		"pk": 4,
+		"fields": {
+			"name": "Ford Fiesta",
+			"plate": "456abc"
+		}
+	},
+	{
+		"model": "api.car",
+		"pk": 5,
+		"fields": {
+			"name": "Ford Ka",
+			"plate": "456def"
+		}
+	}
+]

@@ -1,24 +1,49 @@
 version: "3.9"
    
 services:
-    postgres:
-        image: postgres
+    mysql:
+        image: mysql:8.0
+        env_file:
+            - ./env_variables/mysql.env
         volumes:
-            - ./data/db:/var/lib/postgresql/data
-        environment:
-            - POSTGRES_DB=app_db
-            - POSTGRES_USER=user_db
-            - POSTGRES_PASSWORD=password_db
+            - ./mysql:/var/lib/mysql
+        restart: unless-stopped
+        networks:
+            - cepa
     django:
         build:
             context: .
-            dockerfile: DockerfileDjango
-        command: python manage.py runserver 0.0.0.0:8000
-        tty: true
+            dockerfile: dockerfiles/DockerfileDjango
+        env_file:
+            - ./env_variables/django.env
+        entrypoint: ["./entrypoint.sh"]
         volumes:
-            - ./app:/app
+            - ./django:/app
         ports:
-            - "8000:8000"
+            - 8000:8000
         depends_on:
-            - postgres
-        restart: always
+            - mysql
+        restart: unless-stopped
+        networks:
+            - cepa
+        tty: true
+    react:
+    # React not reloading when changes are applied on windows
+    # See: https://github.com/microsoft/WSL/issues/6255
+        build:
+            context: .
+            dockerfile: dockerfiles/DockerfileReact
+        ports:
+            - 3000:3000
+        restart: unless-stopped
+        networks:
+            - cepa
+        volumes:
+            - ./frontend:/app
+        stdin_open: true
+        tty: true
+
+networks:
+    cepa:
+        external:
+            name: cepa
