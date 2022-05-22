@@ -7,7 +7,7 @@
 
 # Start project  
 In the main directory run:  
-- `docker-compose up -d`  
+- `docker-compose up -d --build`  
 Once the containers are created run:   
 - `docker exec ceca_django_1 python manage.py migrate`  
 then  
